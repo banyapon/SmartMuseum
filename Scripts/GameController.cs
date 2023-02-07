@@ -15,4 +15,11 @@ public class GameController : MonoBehaviour
     public void loadInfo(){
         GameObject instance_image = Instantiate(Resources.Load("images/"+mainValue, typeof(GameObject))) as GameObject;
     }
+    
+    public void loadSound()
+    {
+        AudioSource sndSource = gameObject.AddComponent<AudioSource>() as AudioSource;
+        AudioClip sndClick = Resources.Load<AudioClip>("sounds/" + mainValue);
+        sndSource.PlayOneShot(sndClick);
+    }
 }
